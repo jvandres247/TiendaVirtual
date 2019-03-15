@@ -2,13 +2,28 @@
     <div class="col-md4 mx-auto">
         <div class="card">
             <img src="producto.jpg" alt="Audifonos" class="card-img-top">
+            <h2>$2,999.00</h2>
             <div class="card-body">
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
             </div>
             <div class="card-footer">
-                <button class="btn btn-dark btn-block">
-                    Comprar <i class="fa fa-shopping-cart"></i>
-                </button>
+                <form action="/checkout" method="POST">
+                    <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_wy4PpdqUqawC2Hyabe0JqMZK"
+                        data-amount="299999"
+                        data-name="Kada Natura"
+                        data-description="Widget"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto">
+                    </script>
+                    <script>
+                        document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+                    </script>
+                    <button class="btn btn-dark btn-block">
+                        Comprar <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>
